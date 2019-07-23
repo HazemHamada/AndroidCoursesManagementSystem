@@ -4,6 +4,7 @@
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="register">Register</string>
+    <string name="home">Courses Tracks</string>
 
 
 </resources>
