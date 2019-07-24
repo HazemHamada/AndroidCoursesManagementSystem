@@ -19,7 +19,10 @@ import eng.asu.coursesmanagementsystem.services.DownloadImageTask;
 
 public class InstructorDetailsActivity extends AppCompatActivity {
 
-    private TextView Vname, Vemail, Vphone, Vbio;
+    private TextView Vname;
+    private TextView Vemail;
+    //private TextView Vphone;
+    private TextView Vbio;
     private ImageView Vimage;
 
     @Override
@@ -30,7 +33,7 @@ public class InstructorDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.instructor_details);
         Vname=findViewById(R.id.name);
         Vemail=findViewById(R.id.email);
-        Vphone=findViewById(R.id.phone);
+        //Vphone=findViewById(R.id.phone);
         Vbio=findViewById(R.id.bio);
         Vimage=findViewById(R.id.image);
         //Intent intent=getIntent();
@@ -40,7 +43,7 @@ public class InstructorDetailsActivity extends AppCompatActivity {
         if( instructor != null) {
             Vname.setText(instructor.getName());
             Vemail.setText(instructor.getEmail());
-            Vphone.setText(instructor.getPhone());
+            //Vphone.setText(instructor.getPhone());
             Vbio.setText(instructor.getBio());
 
             // show The Image in a ImageView

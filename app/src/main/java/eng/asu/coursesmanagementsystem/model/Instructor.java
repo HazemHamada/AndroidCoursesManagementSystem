@@ -6,7 +6,7 @@ public class Instructor implements Serializable {
     private int id;
     private String name;
     private String email;
-    private String phone;
+    //private String phone;
     private String bio;
     private String imageUrl;
 
@@ -14,7 +14,7 @@ public class Instructor implements Serializable {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.phone = phone;
+        //this.phone = phone;
         this.bio = bio;
         this.imageUrl = imageUrl;
     }
@@ -25,7 +25,7 @@ public class Instructor implements Serializable {
 
     public String getEmail() { return email; }
 
-    public String getPhone() { return phone; }
+    //public String getPhone() { return phone; }
 
     public String getBio() { return bio; }
 
@@ -37,7 +37,7 @@ public class Instructor implements Serializable {
 
     public void setEmail(String email) { this.email = email; }
 
-    public void setPhone(String phone) { this.phone = phone; }
+    //public void setPhone(String phone) { this.phone = phone; }
 
     public void setBio(String bio) { this.bio = bio; }
 
