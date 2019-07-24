@@ -25,6 +25,8 @@ public class CoursesAsyncGet extends AsyncTask<ClassAsyncGetInterface,Integer, C
 
     @Override
     protected void onPostExecute(Course[] courses) {
+        // just added super to see why there is an error
+        super.onPostExecute(courses);
         callback.postExecution(courses);
     }
 
