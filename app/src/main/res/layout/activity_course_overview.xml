@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fcf2c7"
+    android:layout_margin="20dp"
+    tools:context=".activities.CourseOverview">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/courseImg"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/courseImg"
+        android:layout_marginStart="15dp"
+        android:id="@+id/courseName"
+        android:layout_marginTop="15dp"
+        android:text="Course 1"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/courseImg"
+        android:id="@+id/instructorImg"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/instructorImg"
+        android:layout_alignTop="@+id/instructorImg"
+        android:layout_marginStart="15dp"
+        android:id="@+id/instructorName"
+        android:text="Eng. Mohamed Gamal"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/instructorImg"
+        android:layout_marginTop="20dp"
+        android:id="@+id/description"
+        android:text="This course is For ArkDev Trainees"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:text="Enroll in course"
+        android:id="@+id/manageCourse"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Minimum GPA is 4.00"
+        android:textColor="#ff0a0a"
+        android:textAlignment="center"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/minGpa"
+        />
+
+
+</RelativeLayout>
