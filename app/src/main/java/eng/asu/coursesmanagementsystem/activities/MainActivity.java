@@ -13,35 +13,11 @@ import eng.asu.coursesmanagementsystem.model.Course;
 import eng.asu.coursesmanagementsystem.services.CoursesAsyncGet;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private CoursesAdapter mAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_listing);
+        setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
-        mAdapter = new CoursesAdapter();
-
-        CoursesAsyncGet cag = new CoursesAsyncGet();
-
-        cag.execute(new ClassAsyncGetInterface() {
-            @Override
-            public String[] getParams() {
-                /** get track id from intent of home **/
-                return new String[0];
-            }
-
-            @Override
-            public void postExecution(Course[] courses) {
-
-                mAdapter.setCourses(courses);
-            }
-        });
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerView.setAdapter(mAdapter);
     }
 }
