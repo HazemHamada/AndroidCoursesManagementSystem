@@ -9,7 +9,9 @@ public class Course implements Serializable {
     private String name;
     @SerializedName("image_url")
     private String imageUrl;
+    @SerializedName("desc")
     private String description;
+    @SerializedName("min_gpa")
     private float minGPA;
     private Instructor instructor;
 
