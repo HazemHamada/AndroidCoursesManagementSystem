@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activities.CourseOverview"/>
         <activity android:name=".activities.RegisterActivity"/>
         <activity android:name=".activities.loginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"

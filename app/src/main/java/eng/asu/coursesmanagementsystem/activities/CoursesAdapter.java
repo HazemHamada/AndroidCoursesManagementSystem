@@ -7,15 +7,18 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import eng.asu.coursesmanagementsystem.interfaces.OnCourseListener;
+
 import eng.asu.coursesmanagementsystem.R;
 import eng.asu.coursesmanagementsystem.model.Course;
 
 public class CoursesAdapter extends RecyclerView.Adapter<CourseItemView> {
 
     private Course[] courses;
+    private OnCourseListener ocl;
 
-    public CoursesAdapter() {
-
+    public CoursesAdapter(OnCourseListener ocl) {
+        this.ocl = ocl;
     }
 
     public CoursesAdapter(Course[] courses) {
@@ -27,23 +30,22 @@ public class CoursesAdapter extends RecyclerView.Adapter<CourseItemView> {
         notifyDataSetChanged();
     }
 
+    public Course[] getCourses(){
+        return courses;
+    }
+
     @NonNull
     @Override
     public CourseItemView onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_view_course,
                 viewGroup, false);
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        return new CourseItemView(itemView, viewGroup);
+        return new CourseItemView(itemView, viewGroup, ocl);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CourseItemView coursesItemView, int i) {
         coursesItemView.bindCourse(courses[i]);
+
     }
 
     @Override
