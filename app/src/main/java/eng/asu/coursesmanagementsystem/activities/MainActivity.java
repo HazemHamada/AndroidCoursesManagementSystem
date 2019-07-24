@@ -1,5 +1,6 @@
 package eng.asu.coursesmanagementsystem.activities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import eng.asu.coursesmanagementsystem.R;
+import eng.asu.coursesmanagementsystem.interfaces.ClassAsyncGetInterface;
+import eng.asu.coursesmanagementsystem.model.Course;
+import eng.asu.coursesmanagementsystem.services.CoursesAsyncGet;
 import eng.asu.coursesmanagementsystem.model.Instructor;
 import eng.asu.coursesmanagementsystem.model.Track;
 import eng.asu.coursesmanagementsystem.services.TrackService;
@@ -38,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements TrackService.Trac
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
