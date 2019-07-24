@@ -16,8 +16,6 @@
         <activity android:name=".activities.loginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustResize"/>
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/home">
