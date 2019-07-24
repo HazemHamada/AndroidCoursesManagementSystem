@@ -8,6 +8,7 @@ public class Track {
         this.id = id;
         this.name = name;
     }
+    public Track(){}
 
     public int getId() {
         return id;
@@ -16,4 +17,5 @@ public class Track {
     public String getName() {
         return name;
     }
+
 }

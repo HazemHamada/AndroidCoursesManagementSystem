@@ -1,6 +1,8 @@
 package eng.asu.coursesmanagementsystem.model;
 
-public class Instructor {
+import java.io.Serializable;
+
+public class Instructor implements Serializable {
     private int id;
     private String name;
     private String email;

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="eng.asu.coursesmanagementsystem">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,15 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+<<<<<<< HEAD
         <activity android:name=".activities.ListingActivity"></activity>
         <activity android:name=".activities.loginActivity"></activity>
         <activity android:name=".activities.MainActivity">
+=======
+        <activity android:name=".activities.CourseOverview"></activity>
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.loginActivity" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/home">
+>>>>>>> master
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.InstructorDetailsActivity" />
     </application>
 
 </manifest>
