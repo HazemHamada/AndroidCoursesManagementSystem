@@ -15,7 +15,8 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText email ,password,confirmPassword,phone,gpa,name;
     private Button btnRegister;
     private String emailTxt,passwordtxt,confirmPasswordtxt,nametxt;
-    int gpaTxt,phoneTxt;
+    float gpaTxt;
+    String phoneTxt;
     boolean isInvalid = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else{
                     try{
-                        phoneTxt = Integer.parseInt(phone.getText().toString());
+                        phoneTxt = phone.getText().toString();
                     }
                     catch(Exception e) {
                         phone.setError("Phone must be a number");
@@ -56,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else{
                     try {
-                        gpaTxt = Integer.parseInt(gpa.getText().toString());
+                        gpaTxt = Float.parseFloat(gpa.getText().toString());
                     }
                     catch (Exception e){
                         gpa.setError("Gpa must be a number");
@@ -98,8 +99,8 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 if(!isInvalid){
                     Toast.makeText(getApplicationContext()," Registered successfully",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    onBackPressed();
+                    finish();
                 }
                 isInvalid = false;
 
@@ -114,7 +115,7 @@ public class RegisterActivity extends AppCompatActivity {
         Matcher matcher = emailPat.matcher(email);
         return  matcher.find();
     }
-    public boolean validateGpa(int gpa) {
+    public boolean validateGpa(float gpa) {
         return (gpa > 0 && gpa <= 4);
     }
     public boolean validateName(String name){

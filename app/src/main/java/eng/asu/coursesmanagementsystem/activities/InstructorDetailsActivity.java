@@ -1,21 +1,25 @@
 package eng.asu.coursesmanagementsystem.activities;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.drawable.RoundedBitmapDrawable;
-import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.bumptech.glide.request.target.BitmapImageViewTarget;
 
 import eng.asu.coursesmanagementsystem.R;
 import eng.asu.coursesmanagementsystem.model.Instructor;
-import eng.asu.coursesmanagementsystem.services.DownloadImageTask;
+import eng.asu.coursesmanagementsystem.utils.SharedCache;
+
+import static eng.asu.coursesmanagementsystem.utils.SharedCache.accountItem;
+import static eng.asu.coursesmanagementsystem.utils.SharedCache.loginItem;
+import static eng.asu.coursesmanagementsystem.utils.SharedCache.logoutItem;
 
 public class InstructorDetailsActivity extends AppCompatActivity {
 
@@ -23,6 +27,49 @@ public class InstructorDetailsActivity extends AppCompatActivity {
     private TextView Vemail;
     private TextView Vbio;
     private ImageView Vimage;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main_activity_menu, menu);
+        super.onCreateOptionsMenu(menu);
+        SharedCache sharedCache = new SharedCache(this);
+        loginItem = menu.findItem(R.id.loginIcon);
+        logoutItem = menu.findItem(R.id.logoutIcon);
+        accountItem = menu.findItem(R.id.myCoursesIcon);
+        if(sharedCache.loadData().equals(""))
+        {
+            logoutItem.setVisible(false);
+            accountItem.setVisible(false);
+        }
+        else
+        {
+            loginItem.setVisible(false);
+        }
+        return true;
+    }
+
+    public void onLogin(MenuItem mi)
+    {
+        Intent intent = new Intent(InstructorDetailsActivity.this , LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void onLogout(MenuItem mi)
+    {
+        (new SharedCache(this)).deleteData();
+        logoutItem.setVisible(false);
+        accountItem.setVisible(false);
+        loginItem.setVisible(true);
+        Toast.makeText(getApplicationContext(),"Logged out Successfully",Toast.LENGTH_SHORT).show();
+        invalidateOptionsMenu();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        invalidateOptionsMenu();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

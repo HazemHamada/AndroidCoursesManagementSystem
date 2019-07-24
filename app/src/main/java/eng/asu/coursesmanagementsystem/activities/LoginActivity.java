@@ -2,8 +2,7 @@ package eng.asu.coursesmanagementsystem.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
@@ -17,7 +16,11 @@ import android.widget.Toast;
 import eng.asu.coursesmanagementsystem.R;
 import eng.asu.coursesmanagementsystem.utils.SharedCache;
 
-public class loginActivity extends AppCompatActivity {
+import static eng.asu.coursesmanagementsystem.utils.SharedCache.accountItem;
+import static eng.asu.coursesmanagementsystem.utils.SharedCache.loginItem;
+import static eng.asu.coursesmanagementsystem.utils.SharedCache.logoutItem;
+
+public class LoginActivity extends AppCompatActivity {
     private EditText emailEt , passwordEt;
     private Button btn_login;
     private TextView register;
@@ -56,6 +59,10 @@ public class loginActivity extends AppCompatActivity {
                 else {
                     login(email);
                     show();
+                    logoutItem.setVisible(true);
+                    accountItem.setVisible(true);
+                    loginItem.setVisible(false);
+                    onBackPressed();
                 }
             }
 
@@ -64,7 +71,9 @@ public class loginActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
