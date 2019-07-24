@@ -10,22 +10,21 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 
 public class RegisterActivity extends AppCompatActivity {
-    private EditText email ,password,confirmPassword,phone,gpa,firstName,lastName;
+    private EditText email ,password,confirmPassword,phone,gpa,name;
     private Button btnRegister;
-    String emailTxt,passwordtxt,confirmPasswordtxt,phoneTxt,gpaTxt,firstNametxt,lastNametxt;
+    String emailTxt,passwordtxt,confirmPasswordtxt,phoneTxt,gpaTxt,nametxt,lastNametxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
 
         email=findViewById(R.id.email);
         password=findViewById(R.id.password);
         confirmPassword=findViewById(R.id.confirmPassword);
         phone=findViewById(R.id.phone);
         gpa=findViewById(R.id.gpa);
-        firstName=findViewById(R.id.firstName);
-        lastName=findViewById(R.id.lastName);
+        name=findViewById(R.id.name);
         btnRegister=findViewById(R.id.btnRegister);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -37,8 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
                 emailTxt = email.getText().toString();
                 phoneTxt = phone.getText().toString();
                 gpaTxt = gpa.getText().toString();
-                firstNametxt = firstName.getText().toString();
-                lastNametxt = lastName.getText().toString();
+                nametxt = name.getText().toString();
 
             }
         });
