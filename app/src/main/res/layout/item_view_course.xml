@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
-    android:layout_marginTop="8dp"
+    android:layout_marginTop="20dp"
+    android:background="#66CDAA"
     android:orientation="horizontal"
     >
     <ImageView
@@ -19,6 +20,17 @@
         android:text="First Course"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:fontFamily="serif"
+        android:textSize="20sp"
+        android:textStyle="bold"
          />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#94928a"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/course_image"/>
 
 </RelativeLayout>

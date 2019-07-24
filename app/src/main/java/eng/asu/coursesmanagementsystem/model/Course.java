@@ -1,8 +1,13 @@
 package eng.asu.coursesmanagementsystem.model;
 
-public class Course {
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+
+public class Course implements Serializable {
     private int id;
     private String name;
+    @SerializedName("image_url")
     private String imageUrl;
     private String description;
     private float minGPA;

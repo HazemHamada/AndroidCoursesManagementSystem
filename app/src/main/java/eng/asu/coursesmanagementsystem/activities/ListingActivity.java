@@ -41,8 +41,7 @@ public class ListingActivity extends AppCompatActivity {
             }
         });
 
-        //There is a problem with the context in the next line.
-        //recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(mAdapter);
     }
 }

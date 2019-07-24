@@ -26,7 +26,8 @@ public class CourseItemView extends RecyclerView.ViewHolder {
     }
 
     public void bindCourse(Course course){
-        courseNameTextView.setText(course.getName());
+        String firstCaptialCourse = course.getName().replace('c','C');
+        courseNameTextView.setText(firstCaptialCourse);
         Glide.with(parent).load(course.getImageUrl()).into(image);
     }
 

@@ -32,6 +32,12 @@ public class CoursesAdapter extends RecyclerView.Adapter<CourseItemView> {
     public CourseItemView onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_view_course,
                 viewGroup, false);
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         return new CourseItemView(itemView, viewGroup);
     }
 
@@ -42,9 +48,11 @@ public class CoursesAdapter extends RecyclerView.Adapter<CourseItemView> {
 
     @Override
     public int getItemCount() {
-        return courses.length;
+        try{
+            return courses.length;
+        } catch(NullPointerException e){
+            return 0;
+        }
     }
-
-
 }
 
