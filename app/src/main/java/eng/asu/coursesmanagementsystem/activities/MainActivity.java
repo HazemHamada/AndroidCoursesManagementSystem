@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity implements TrackService.Trac
 
     private RecyclerView recyclerView;
 
-    private static List<Track> trackList = new ArrayList<>();
-    private static TracksAdapter trackAdapter;
+    private List<Track> trackList = new ArrayList<>();
+    private TracksAdapter trackAdapter;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

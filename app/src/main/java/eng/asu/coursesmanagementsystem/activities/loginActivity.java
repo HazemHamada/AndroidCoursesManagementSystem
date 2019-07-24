@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,6 +36,10 @@ public class loginActivity extends AppCompatActivity {
         btn_login=findViewById(R.id.btn_login);
         loading=findViewById(R.id.loading);
         register=findViewById(R.id.register);
+
+        SpannableString content = new SpannableString("Register");
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        register.setText(content);
 
         sharedCache=new SharedCache(this);
 

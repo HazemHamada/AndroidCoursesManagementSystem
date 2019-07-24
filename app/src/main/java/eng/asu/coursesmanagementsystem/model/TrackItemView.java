@@ -22,7 +22,7 @@ public class TrackItemView extends RecyclerView.ViewHolder {
         name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), loginActivity.class);
+                Intent intent = new Intent(view.getContext(), ListingActivity.class);
                 intent.putExtra("track",getAdapterPosition());
                 view.getContext().startActivity(intent);
             }

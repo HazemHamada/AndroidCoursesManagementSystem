@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Courses Management System</string>
+    <string name="app_name">Courses</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">LOGIN</string>

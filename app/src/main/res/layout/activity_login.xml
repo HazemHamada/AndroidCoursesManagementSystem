@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff">
+    android:background="#fcf2c7">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
                 android:layout_marginBottom="100dp"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo_arkdev" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"

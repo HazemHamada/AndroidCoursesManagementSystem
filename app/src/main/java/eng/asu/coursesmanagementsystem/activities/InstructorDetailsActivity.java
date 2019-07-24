@@ -21,29 +21,26 @@ public class InstructorDetailsActivity extends AppCompatActivity {
 
     private TextView Vname;
     private TextView Vemail;
-    //private TextView Vphone;
     private TextView Vbio;
     private ImageView Vimage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //String url = "http://java.sogeti.nl/JavaBlog/wp-content/uploads/2009/04/android_icon_256.png";
-        //Instructor i=new Instructor( 1,"name", "email", "phone","bio", url );
+        //Instructor i=new Instructor( 1,"name", "email","bio", url );
         super.onCreate(savedInstanceState);
         setContentView(R.layout.instructor_details);
         Vname=findViewById(R.id.name);
         Vemail=findViewById(R.id.email);
-        //Vphone=findViewById(R.id.phone);
         Vbio=findViewById(R.id.bio);
         Vimage=findViewById(R.id.image);
-        //Intent intent=getIntent();
+        Intent intent = getIntent();
         Instructor instructor;
-        instructor= (Instructor) getIntent().getSerializableExtra("Instructor");
+        instructor = (Instructor)intent.getSerializableExtra("instructor");
         //instructor=i;
         if( instructor != null) {
             Vname.setText(instructor.getName());
             Vemail.setText(instructor.getEmail());
-            //Vphone.setText(instructor.getPhone());
             Vbio.setText(instructor.getBio());
 
             // show The Image in a ImageView
