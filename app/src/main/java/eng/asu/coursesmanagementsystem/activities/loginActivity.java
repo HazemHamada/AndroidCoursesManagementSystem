@@ -3,6 +3,7 @@ package eng.asu.coursesmanagementsystem.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -26,5 +27,14 @@ public class loginActivity extends AppCompatActivity {
         btn_login=findViewById(R.id.btn_login);
         loading=findViewById(R.id.loading);
         register=findViewById(R.id.register);
+
+
+        /*btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                setContentView(R.layout.instructor_details);
+            }
+        });*/
     }
 }
