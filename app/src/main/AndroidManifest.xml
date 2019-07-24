@@ -12,18 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-<<<<<<< HEAD
         <activity android:name=".activities.ListingActivity"></activity>
-        <activity android:name=".activities.loginActivity"></activity>
-        <activity android:name=".activities.MainActivity">
-=======
         <activity android:name=".activities.CourseOverview"></activity>
         <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.loginActivity" />
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/home">
->>>>>>> master
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
