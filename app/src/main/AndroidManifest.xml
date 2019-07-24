@@ -13,7 +13,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".activities.RegisterActivity"/>
-        <activity android:name=".activities.loginActivity" />
+        <activity android:name=".activities.loginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/home">

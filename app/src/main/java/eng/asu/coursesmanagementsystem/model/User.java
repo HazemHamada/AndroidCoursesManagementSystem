@@ -14,6 +14,9 @@ public class User {
         this.phone = phone;
         this.GPA = GPA;
     }
+    public User(){
+
+    }
 
     public int getId() {return id;}
 
