@@ -70,6 +70,7 @@
                 android:id="@+id/btn_login"
                 android:layout_below="@+id/layout_password"
                 android:layout_marginTop="35dp"
+                android:fontFamily="serif"
                 android:text="@string/login"/>
 
             <TextView
@@ -80,6 +81,7 @@
                 android:text="@string/register"
                 android:gravity="center|bottom"
                 android:layout_below="@+id/btn_login"
+                android:fontFamily="serif"
                 android:clickable="true"
                 android:focusable="true"
                 android:textColor="@color/text_color"

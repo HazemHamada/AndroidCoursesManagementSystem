@@ -20,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="serif"
         android:textSize="24sp"/>
 
     <TextView
@@ -28,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="serif"
         android:textSize="18sp"/>
 
     <TextView
@@ -36,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="15dp"
+        android:fontFamily="serif"
         android:textSize="18sp"/>
 
     <TextView
@@ -44,5 +47,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:fontFamily="serif"
         android:textSize="16sp"/>
 </LinearLayout>

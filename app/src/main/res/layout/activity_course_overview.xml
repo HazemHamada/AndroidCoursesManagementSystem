@@ -23,13 +23,24 @@
         android:id="@+id/courseName"
         android:layout_marginTop="30dp"
         android:text="Course 1"
+        android:fontFamily="serif"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Instructor"
+        android:layout_below="@+id/courseImg"
+        android:textAlignment="center"
+        android:fontFamily="serif"
+        android:id="@+id/instructor"
         android:textSize="20sp"/>
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/courseImg"
+        android:layout_below="@+id/instructor"
         android:id="@+id/instructorImg"
         android:layout_marginStart="20dp"
         />
@@ -43,6 +54,7 @@
         android:layout_marginStart="15dp"
         android:id="@+id/instructorName"
         android:text="Eng. Mohamed Gamal"
+        android:fontFamily="serif"
         android:textColor="@color/text_color"
         android:textSize="18sp"/>
 
@@ -53,6 +65,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:id="@+id/description"
+        android:fontFamily="serif"
         android:text="This course is For ArkDev Trainees"/>
 
     <Button
@@ -63,6 +76,7 @@
         android:text="Enroll in course"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:fontFamily="serif"
         android:id="@+id/manageCourse"/>
 
     <TextView
@@ -72,6 +86,7 @@
         android:text="Minimum GPA is 4.00"
         android:textColor="#ff0a0a"
         android:textAlignment="center"
+        android:fontFamily="serif"
         android:layout_marginBottom="15dp"
         android:id="@+id/minGpa"
         />

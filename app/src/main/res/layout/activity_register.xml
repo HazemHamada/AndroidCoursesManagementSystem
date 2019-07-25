@@ -29,8 +29,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Registeration"
+                android:text="Registration"
                 android:layout_marginBottom="10dp"
+                android:fontFamily="serif"
                 android:textSize="22sp"/>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -116,7 +117,8 @@
                 android:id="@+id/btnRegister"
                 android:layout_marginTop="35dp"
                 android:layout_marginBottom="20dp"
-                android:text="@string/register"/>
+                android:text="@string/register"
+                android:fontFamily="serif"/>
         </LinearLayout>
 
 

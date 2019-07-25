@@ -16,7 +16,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Button btnRegister;
     private String emailTxt,passwordtxt,confirmPasswordtxt,nametxt;
     float gpaTxt;
-    String phoneTxt;
+    int phoneTxt;
     boolean isInvalid = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else{
                     try{
-                        phoneTxt = phone.getText().toString();
+                        phoneTxt = Integer.parseInt(phone.getText().toString());
                     }
                     catch(Exception e) {
                         phone.setError("Phone must be a number");

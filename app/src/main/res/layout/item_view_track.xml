@@ -12,6 +12,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@drawable/ripple"
+        android:fontFamily="serif"
         android:id="@+id/trackBtn"/>
 
 </LinearLayout>
