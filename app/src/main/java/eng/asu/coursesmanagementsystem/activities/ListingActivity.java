@@ -83,8 +83,13 @@ public class ListingActivity extends AppCompatActivity implements OnCourseListen
         cag.execute(new ClassAsyncGetInterface() {
             @Override
             public String[] getParams() {
-                /** get track id from intent of home **/
-                return new String[0];
+                Intent intent = getIntent();
+                if(intent.hasExtra("track")){
+                    return new String[]{"trackid",""+intent.getIntExtra("track", 0)};
+                }
+                else{
+                    return new String[]{"studentid",""+intent.getIntExtra("user", 0)};
+                }
             }
 
             @Override

@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class Course implements Serializable {
     private int id;
     private String name;
-    @SerializedName("image_url")
+    @SerializedName("image_path")
     private String imageUrl;
     @SerializedName("desc")
     private String description;

@@ -33,7 +33,7 @@ public class CoursesAsyncGet extends AsyncTask<ClassAsyncGetInterface,Integer, C
 
     private Course[] getCourses(String[] params){
 
-        String json = GetRequestService.getRequest("courses","http://jsonstub.com/load-courses",params);
+        String json = GetRequestService.getRequest("courses","http://3.80.183.111/app/api/getCourse.php",params);
         return new Gson().fromJson(json, Course[].class);
     }
 
