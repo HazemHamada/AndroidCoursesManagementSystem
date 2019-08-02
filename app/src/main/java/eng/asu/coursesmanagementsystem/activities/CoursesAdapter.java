@@ -21,6 +21,9 @@ public class CoursesAdapter extends RecyclerView.Adapter<CourseItemView> {
         this.ocl = ocl;
     }
 
+    public CoursesAdapter() {
+    }
+
     public CoursesAdapter(Course[] courses) {
         this.courses = courses;
     }

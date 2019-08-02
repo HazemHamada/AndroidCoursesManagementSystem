@@ -16,8 +16,9 @@ public class GetRequestService {
         String ans="";
         HttpURLConnection urlConnection = null;
         try {
-            if(params.length >=0)
+            if(params.length >=0) {
                 link = link + "?" + params[0] + "=" + params[1];
+            }
             URL url = new URL(link);
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");

@@ -9,7 +9,7 @@ public class Instructor implements Serializable {
     private String name;
     private String email;
     private String bio;
-    @SerializedName("image_url")
+    @SerializedName("image_path")
     private String imageUrl;
 
     public Instructor(int id, String name, String email, String bio, String imageUrl) {

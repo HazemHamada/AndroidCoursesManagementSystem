@@ -99,8 +99,8 @@ public class CourseOverview extends AppCompatActivity {
         courseName.setText(course.getName());
         courseDescription.setText(course.getDescription());
         minGPA.setText("Minimum GPA to enroll is "+course.getMinGPA());
-        Glide.with(this).load(instructor.getImageUrl()).apply(RequestOptions.circleCropTransform()).into(instructorImage);
-        Glide.with(this).load(course.getImageUrl()).into(courseImage);
+        Glide.with(this).load("http://3.80.183.111/images/"+instructor.getImageUrl()).apply(RequestOptions.circleCropTransform()).into(instructorImage);
+        Glide.with(this).load("http://3.80.183.111/images/"+course.getImageUrl()).into(courseImage);
 
         instructorName.setOnClickListener(new View.OnClickListener() {
             @Override

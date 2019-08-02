@@ -9,28 +9,44 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import eng.asu.coursesmanagementsystem.R;
+import eng.asu.coursesmanagementsystem.interfaces.ClassAsyncGetInterface;
+import eng.asu.coursesmanagementsystem.interfaces.OnCourseListener;
+import eng.asu.coursesmanagementsystem.model.Course;
 import eng.asu.coursesmanagementsystem.model.Instructor;
+import eng.asu.coursesmanagementsystem.model.Track;
+import eng.asu.coursesmanagementsystem.services.CoursesAsyncGet;
+import eng.asu.coursesmanagementsystem.services.TrackService;
 import eng.asu.coursesmanagementsystem.utils.SharedCache;
 
 import static eng.asu.coursesmanagementsystem.utils.SharedCache.accountItem;
 import static eng.asu.coursesmanagementsystem.utils.SharedCache.loginItem;
 import static eng.asu.coursesmanagementsystem.utils.SharedCache.logoutItem;
 
-public class InstructorDetailsActivity extends AppCompatActivity {
+public class InstructorDetailsActivity extends AppCompatActivity implements ClassAsyncGetInterface{
 
     private TextView Vname;
     private TextView Vemail;
     private TextView Vbio;
     private ImageView Vimage;
+    private RecyclerView recyclerView;
+    private Instructor instructor;
+
+    private List<Track> trackList = new ArrayList<>();
+    private CoursesAdapter courseAdapter;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu; this adds items to the action bar if it is present
         getMenuInflater().inflate(R.menu.main_activity_menu, menu);
         super.onCreateOptionsMenu(menu);
         SharedCache sharedCache = new SharedCache(this);
@@ -81,40 +97,46 @@ public class InstructorDetailsActivity extends AppCompatActivity {
         Vemail=findViewById(R.id.email);
         Vbio=findViewById(R.id.bio);
         Vimage=findViewById(R.id.image);
+        recyclerView = findViewById(R.id.recycle);
+        recyclerView.setHasFixedSize(true);
+
+        courseAdapter = new CoursesAdapter();
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setAdapter(courseAdapter);
+
         Intent intent = getIntent();
-        Instructor instructor;
         instructor = (Instructor)intent.getSerializableExtra("instructor");
+        CoursesAsyncGet cag = new CoursesAsyncGet();
+        cag.execute(this);
         //instructor=i;
         if( instructor != null) {
             Vname.setText(instructor.getName());
             Vemail.setText(instructor.getEmail());
             Vbio.setText(instructor.getBio());
 
-            // show The Image in a ImageView
-
-            //new DownloadImageTask(Vimage).execute(instructor.getImageUrl());
-
-            //or
 
             Glide.with(this)
-                    .load(instructor.getImageUrl())
+                    .load("http://3.80.183.111/images/"+instructor.getImageUrl())
                     .apply(RequestOptions.circleCropTransform())
                     .into(Vimage);
 
-            //or
-
-            /*Glide.with(this).load(instructor.getImageUrl()).asBitmap().centerCrop().into(new BitmapImageViewTarget(Vimage) {
-                @Override
-                protected void setResource(Bitmap resource) {
-                    RoundedBitmapDrawable circularBitmapDrawable =
-                            RoundedBitmapDrawableFactory.create(this.getResources(), resource);
-                    circularBitmapDrawable.setCircular(true);
-                    Vimage.setImageDrawable(circularBitmapDrawable);
-                }
-            });*/
-
         }
 
+    }
+
+    @Override
+    public String[] getParams() {
+        Intent intent = getIntent();
+        if(intent.hasExtra("instructor")){
+            return new String[]{"instructorid", "" + instructor.getId()};
+        }
+        return new String[0];
+    }
+
+    @Override
+    public void postExecution(Course[] courses) {
+        courseAdapter.setCourses(courses);
     }
 
 }

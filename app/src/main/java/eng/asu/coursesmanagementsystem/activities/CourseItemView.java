@@ -32,7 +32,7 @@ public class CourseItemView extends RecyclerView.ViewHolder implements View.OnCl
     public void bindCourse(Course course){
         String firstCaptialCourse = course.getName().replace('c','C');
         courseNameTextView.setText(firstCaptialCourse);
-        Glide.with(parent).load(course.getImageUrl()).into(image);
+        Glide.with(parent).load("http://3.80.183.111/images/"+course.getImageUrl()).into(image);
     }
 
     @Override

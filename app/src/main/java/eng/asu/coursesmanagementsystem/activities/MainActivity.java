@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements TrackService.Trac
 
         trackAdapter = new TracksAdapter();
 
-        new TrackService(this).execute("http://jsonstub.com/load-tracks");
+        new TrackService(this).execute("http://3.80.183.111/app/api/getTrack.php");
 
         RecyclerView.LayoutManager mlayoutManager = new LinearLayoutManager(getApplicationContext());
 

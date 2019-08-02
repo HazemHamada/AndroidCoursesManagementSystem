@@ -12,6 +12,7 @@ import eng.asu.coursesmanagementsystem.activities.ListingActivity;
 
 public class TrackItemView extends RecyclerView.ViewHolder {
     private Button name;
+    private int id;
 
     public TrackItemView(@NonNull View itemView) {
         super(itemView);
@@ -20,11 +21,11 @@ public class TrackItemView extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), ListingActivity.class);
-                intent.putExtra("track",getAdapterPosition());
+                intent.putExtra("track",id);
                 view.getContext().startActivity(intent);
             }
         });
     }
 
-    public void bindTrack(Track t){name.setText(t.getName());}
+    public void bindTrack(Track t){name.setText(t.getName()); this.id = t.getId();}
 }

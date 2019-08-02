@@ -114,6 +114,7 @@ public class TrackService extends AsyncTask <String, String, List<Track>>{
     @Override
     protected void onPostExecute(List<Track> Tracks) {
         super.onPostExecute(Tracks);
+
         trackBind.setTracks(Tracks);
     }
 
